@@ -15,14 +15,6 @@ BiSexual::~BiSexual()
 	MakeEmptyPublic();
 }
 
-BiSexual::BiSexual(BiSexual& oTree)
-{
-}
-
-void BiSexual::operator=(BiSexual& oTree)
-{
-}
-
 void BiSexual::MakeEmptyPublic() {
 	MakeEmpty(root);
 }
@@ -34,7 +26,10 @@ void BiSexual::MakeEmpty(TreeNode* node)
 			MakeEmpty(node->left);
 		if (node->right != nullptr)
 			MakeEmpty(node->right);
-		delete node;
+		cout << "deleting " << node->info << endl;
+		delete node;		
+		node = nullptr;
+
 
 	}
 	else
@@ -64,34 +59,6 @@ bool BiSexual::IsFull()
 	}
 }
 
-int BiSexual::GetLength()
-{
-	return 0;
-}
-
-ItemType BiSexual::GetItem(int item, bool& found)
-{
-	return ItemType();
-}
-
-//void BiSexual::DeleteItem(int item)
-//{
-//	Delete(root, item);
-//}
-
-void BiSexual::ResetTree()
-{
-}
-
-ItemType BiSexual::GetNextItem(bool& finished)
-{
-	return ItemType();
-}
-
-void BiSexual::Print(ofstream outfile)
-{
-}
-
 void BiSexual::printTree()
 {
 	if (!IsEmpty()) {
@@ -106,7 +73,8 @@ void BiSexual::printTree()
 
 void BiSexual::BPutItem(ItemType item)
 {
-	BInsert(root, item);
+	if(!IsFull())
+		BInsert(root, item);
 }
 
 int BiSexual::FindSmallestPublic()
@@ -137,14 +105,6 @@ void BiSexual::printTreePrivate(TreeNode* node, int space)
 		cout << node->info << endl;
 		printTreePrivate(node->left, space);
 	}
-
-
-
-
-	/*if (node->left == nullptr && node->right == nullptr)
-	{
-		cout << node->info;
-	}*/
 }
 
 void BiSexual::printAscending()
@@ -187,16 +147,6 @@ void BiSexual::printDescendingPrivate(TreeNode* node)
 		if (node->left != nullptr)
 			printDescendingPrivate(node->left);
 	}
-}
-
-LeftOrRight BiSexual::Evaluation(ItemType item, ItemType compare)
-{
-	if (compare < item)
-		return Less;
-	else if (compare > item)
-		return Greater;
-
-	return Equal;
 }
 
 void BiSexual::BInsert(TreeNode* &node, ItemType item)

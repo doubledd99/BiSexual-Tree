@@ -28,15 +28,8 @@ public:
 	~BiSexual();
 
 	void MakeEmptyPublic();
-	BiSexual(BiSexual& oTree);
-	void operator=(BiSexual& oTree);
 	bool IsEmpty();
 	bool IsFull();
-	int GetLength();
-	ItemType GetItem(ItemType item, bool& found);
-	void ResetTree();
-	ItemType GetNextItem(bool& finished);
-	void Print(ofstream outfile);
 	void printTree();
 	void printAscending();
 	void printDescending();
@@ -52,7 +45,6 @@ private:
 	void printTreePrivate(TreeNode* node, int space);
 	void printAscendingPrivate(TreeNode* node);
 	void printDescendingPrivate(TreeNode* node);
-	LeftOrRight Evaluation(ItemType item, ItemType compare);
 
 	void BInsert(TreeNode*& node, ItemType item);
 	void DeleteRoot();

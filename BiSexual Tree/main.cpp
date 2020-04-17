@@ -5,14 +5,14 @@
 int main() {
 	BiSexual tree1;
 	tree1.BPutItem(5);
-	//tree1.BPutItem(2);
-	//tree1.BPutItem(3);
-	//tree1.BPutItem(8);
-	//tree1.BPutItem(12);
-	//tree1.BPutItem(10);
-	//tree1.BPutItem(7);
-	//tree1.BPutItem(6);
-	//tree1.BPutItem(15);
+	tree1.BPutItem(2);
+	tree1.BPutItem(3);
+	tree1.BPutItem(8);
+	tree1.BPutItem(12);
+	tree1.BPutItem(10);
+	tree1.BPutItem(7);
+	tree1.BPutItem(6);
+	tree1.BPutItem(15);
 	tree1.BPutItem(1);
 	//tree1.printTree();
 	tree1.printAscending();
@@ -30,7 +30,6 @@ int main() {
 	tree1.printDescending();
 	cout << endl;
 	tree1.printTree();
-	tree1.MakeEmptyPublic();
-	tree1.printTree();
+	//tree1.MakeEmptyPublic();
 	return 0;
 }
