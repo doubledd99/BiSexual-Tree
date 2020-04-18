@@ -1,10 +1,18 @@
+///////////////////////////////////////////////////////////
+//Daniel Dooley											 //
+//Mr. Busch												 //
+//Lab 5 - Bisexual tree.... binary....					 //
+//"Create a binary tree class which will take integers	 //
+//and sort them in alphabetical order. Your class should //
+//also be able to sort them in reverse alphabetical order//
+//as well."												 //
+///////////////////////////////////////////////////////////
+
 #include "BiSexual.h"
 
-
-
 int main() {
-	BiSexual tree1;
-	tree1.BPutItem(5);
+	BiSexual tree1; //creates tree1 object of BiSexual class
+	tree1.BPutItem(5);//inserts 5 into tree
 	tree1.BPutItem(2);
 	tree1.BPutItem(3);
 	tree1.BPutItem(8);
@@ -30,6 +38,10 @@ int main() {
 	tree1.printDescending();
 	cout << endl;
 	tree1.printTree();
-	//tree1.MakeEmptyPublic();
+	//////////////////////////////////////////////////////
+	//	Warning you cannot call makeempty twice because //
+	//it will try to delete something that doesnt exist //
+	//////////////////////////////////////////////////////
+	//tree1.MakeEmptyPublic(); 
 	return 0;
 }
